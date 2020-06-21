@@ -1,0 +1,2 @@
+models
+-DCATKIN_DEVEL_PREFIX=/home/tapdk/model1/devel -DCMAKE_INSTALL_PREFIX=/home/tapdk/model1/install -G Unix Makefiles

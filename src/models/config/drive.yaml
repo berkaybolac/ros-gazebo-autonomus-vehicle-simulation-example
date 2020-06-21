@@ -1,0 +1,31 @@
+type: "diff_drive_controller/DiffDriveController"
+publish_rate: 50
+
+
+
+left_wheel: ['base_to_left_front_wheel','base_to_left_rear_wheel']
+right_wheel: ['base_to_rigth_front_wheel','base_to_right_rear_wheel']
+
+wheel_separation: 1.0
+wheel_radius: 1.0
+cmd_vel_timeout: 0.25
+enable_odom_tf: true
+pose_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.03]
+twist_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.03]
+
+base_frame_id: base_link
+
+linear:
+  x:
+    has_velocity_limits : True
+    max_velocity : 15.0
+    has_acceleration_limits: True
+    max_acceleration : 10.0
+angular:
+  z:
+    has_velocity_limits : True
+    max_velocity : 15.0
+    has_acceleration_limits: True
+    max_acceleration : 10.0
+
+

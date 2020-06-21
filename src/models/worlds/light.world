@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sdf version='1.6'>
+  <world name='default'>
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <model name='light_model'>
+      <static>1</static>
+      <link name='cylinder'>
+        <pose frame=''>0 0 0.25 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>0.1</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>0.1</length>
+            </cylinder>
+          </geometry>
+          <!-- <material> <!-- LED material -->
+         <!-- <ambient>0 0 0 1</ambient>
+        <!--  <diffuse>0 0 0 1</diffuse>
+          <!-- <specular>0 0 0 0</specular>
+          <!--<emissive>0 1 0 1</emissive> -->
+       <!-- </material> <!-- End LED material -->
+        </visual>
+       <light name='light_source1' type="directional">
+        <diffuse>0.7 0.7 0.7 0</diffuse>
+        <direction>-1 -1 -1</direction>
+        </light>
+       
+      </link>
+      <link name='box'>
+        <pose frame=''>0 0 0.75 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.5 0.5 0.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.5 0.5 0.5</size>
+            </box>
+          </geometry>
+        </visual>
+       <include>
+      <name>stop_light_post_474</name>
+      <pose>
+      -41.3
+      -48.7
+      5.01
+      0
+      0
+      -1.57
+      </pose>
+      <uri>model://stop_light_post</uri>
+    </include>
+       
+      </link>
+
+      
+      <joint name='joint' type='fixed'>
+        <parent>cylinder</parent>
+        <child>box</child>
+      </joint>
+      <plugin name='light_control' filename='libFlashLightPlugin.so'>
+        <enable>true</enable>
+        <light>
+          <id>cylinder/light_source1</id>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <emissive>0 1 0 1</emissive>
+           <specular>0 0 0 0</specular>
+          <duration>0.1</duration>
+          <interval>0.4</interval>
+          <color>1 0 0 </color>
+        </light>
+        
+      </plugin>
+
+      <plugin name="keyboard" filename="libKeyboardGUIPlugin.so">
+     </plugin>
+     <plugin name="TrafficLights" filename="libTrafficLightsGUIPlugin.so">
+
+       <!-- Q -->
+       <key value="113" model="stop_light_post_475" color="red"/>
+       <key value="113" model="stop_light_post_482" color="green"/>
+       <key value="113" model="stop_light_post_485" color="green"/>
+       <key value="113" model="stop_light_post_479" color="red"/>
+
+       <!-- A -->
+       <key value="97" model="stop_light_post_475" color="green"/>
+       <key value="97" model="stop_light_post_482" color="red"/>
+       <key value="97" model="stop_light_post_485" color="red"/>
+       <key value="97" model="stop_light_post_479" color="green"/>
+
+       <!-- W -->
+       <key value="119" model="stop_light_post_476" color="red"/>
+       <key value="119" model="stop_light_post_483" color="green"/>
+       <key value="119" model="stop_light_post_480" color="red"/>
+
+       <!-- S -->
+       <key value="115" model="stop_light_post_476" color="green"/>
+       <key value="115" model="stop_light_post_483" color="red"/>
+       <key value="115" model="stop_light_post_480" color="green"/>
+
+       <!-- E -->
+       <key value="101" model="stop_light_post_477" color="red"/>
+       <key value="101" model="stop_light_post_486" color="green"/>
+       <key value="101" model="stop_light_post_481" color="red"/>
+
+       <!-- D -->
+       <key value="100" model="stop_light_post_477" color="green"/>
+       <key value="100" model="stop_light_post_486" color="red"/>
+       <key value="100" model="stop_light_post_481" color="green"/>
+
+       <!-- R -->
+       <key value="114" model="stop_light_post_478" color="red"/>
+       <key value="114" model="stop_light_post_484" color="green"/>
+       <key value="114" model="stop_light_post_487" color="green"/>
+
+       <!-- F -->
+       <key value="102" model="stop_light_post_478" color="green"/>
+       <key value="102" model="stop_light_post_484" color="red"/>
+       <key value="102" model="stop_light_post_487" color="red"/>
+
+     </plugin>
+    </model>
+  </world>
+</sdf>

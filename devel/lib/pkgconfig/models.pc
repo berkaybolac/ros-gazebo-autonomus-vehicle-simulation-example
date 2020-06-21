@@ -1,0 +1,8 @@
+prefix=/home/tapdk/model1/devel
+
+Name: models
+Description: Description of models
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/tapdk/model1/devel/lib 
+Requires: 
